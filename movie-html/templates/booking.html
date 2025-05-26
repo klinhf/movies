@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; }
+        .booking-container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #bde0ff;
+            border-radius: 10px;
+            padding: 32px 24px 24px 24px;
+            box-shadow: 0 0 18px rgba(0,0,0,0.07);
+        }
+        .form-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #383137;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <div class="form-title">Book a Ticket</div>
+        <form action="{{ url_for('booking') }}" method="post" autocomplete="off">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required maxlength="100" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required maxlength="100" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="phonenumber" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phonenumber" name="phonenumber" required maxlength="15" placeholder="Phone number">
+            </div>
+            <div class="mb-3">
+                <label for="movieid" class="form-label">Select Movie</label>
+                <select class="form-select" id="movieid" name="movieid" required>
+                  <option value="1">Crayon Shin-chan: Shrouded in Mystery! The Flowers of Tenkasu Academy</option>
+                  <option value="2">Night Of The Zoopocalypse</option>
+                  <option value="3">ThunderBolts</option>
+                  <option value="4">Doraemon: Nobita Art World Tales</option>
+                  <option value="5">Detective Kien: The Headless Horror</option>
+                  <option value="6">A Minecraft Movie</option>
+                  <option value="7">Holy Night: Demon Hunters</option>
+                  <option value="8">Tunnel: Sun in the Dark</option>
+                  <option value="9">Peg O’ My Heart</option>
+                  <option value="10">Until Dawn</option>
+                </select>
+              </div>  
+            <div class="mb-3">
+                <label for="seatid" class="form-label">Select Seat Types</label>
+                <select class="form-select" id="seatid" name="seatid" required>
+                  <option value="1">Standard - 100,000VND</option>
+                  <option value="2">VIP - 120,000VND</option>
+                  <option value="3">Couple - 150,000VND</option>
+                </select>
+              </div>           
+            <div class="mb-3">
+                <label for="checkin" class="form-label">Date</label>
+                <input type="date" class="form-control" id="checkin" name="checkin" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Confirm Ticket</button>
+        </form>
+    </div>
+</body>
+</html>
